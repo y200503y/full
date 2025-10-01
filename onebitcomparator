@@ -1,0 +1,14 @@
+module one_bit_comparator
+(
+input wire a,
+input wire b,
+output reg greater,
+output reg equal,
+output reg less
+);
+always @(*) begin
+greater = (a & ~b);
+equal = (a ~^ b);
+less = (~a & b);
+end
+endmodule
